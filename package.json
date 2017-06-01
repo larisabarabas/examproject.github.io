@@ -1,0 +1,42 @@
+{
+  "name": "orbiz",
+  "version": "1.0.0",
+  "author": "Petya Buchkova <petya.buchkova@gmail.com>",
+  "description": "orbiz",
+  "main": "server/orbiz-server.js",
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint && nsp check",
+    "build:sdk": "./node_modules/.bin/lb-sdk server/orbiz-server /path/to/client/admin/src/app/shared/sdk"
+  },
+  "dependencies": {
+    "@angular/http": "^4.1.1",
+    "async": "^2.4.0",
+    "bluebird": "^3.5.0",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "fast-csv": "^2.4.0",
+    "helmet": "^1.3.0",
+    "lodash": "^4.17.4",
+    "loopback": "^2.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^2.4.0",
+    "loopback-component-storage": "^3.2.0",
+    "loopback-connector-postgresql": "^2.8.0",
+    "loopback-datasource-juggler": "^2.39.0",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^1.0.1"
+  },
+  "devDependencies": {
+    "@mean-expert/loopback-sdk-builder": "^2.1.0-rc.10.2",
+    "eslint": "^2.13.1",
+    "eslint-config-loopback": "^4.0.0",
+    "nsp": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.wd-agency.com/wdagency/orbiz-platform.git"
+  },
+  "license": "UNLICENSED"
+}

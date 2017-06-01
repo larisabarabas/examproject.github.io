@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "users": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
+  },
+  "Company": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ContactPerson": {
+    "dataSource": "db",
+    "public": true
+  },
+  "CompanyQuestionnaire": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Product": {
+    "dataSource": "db",
+    "public": true
+  },
+  "CompanyProduct": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Campaign": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Survey": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Participant": {
+    "dataSource": "db",
+    "public": true
+  },
+  "SurveyResults": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Client": {
+    "dataSource": "db",
+    "public": true
+  },
+  "PostalCode": {
+    "dataSource": "db",
+    "public": true
+  },
+  "City": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ClientType": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Email": {
+    "dataSource": "EmailDataSource"
+  },
+  "FileUpload": {
+    "dataSource": "db",
+    "public": true
+  },
+  "FileUploadError": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Container": {
+    "dataSource": "container",
+    "public": true
+  }
+}

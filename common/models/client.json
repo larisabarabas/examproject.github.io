@@ -1,0 +1,79 @@
+{
+  "name": "Client",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "CVR": {
+      "type": "number"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phoneNo": {
+      "type": "number"
+    },
+    "lastInvoice": {
+      "type": "date"
+    },
+    "salesEmail": {
+      "type": "string"
+    },
+    "financeEmail": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "postalCode": {
+      "type": "belongsTo",
+      "model": "PostalCode",
+      "foreignKey": ""
+    },
+    "clientType": {
+      "type": "belongsTo",
+      "model": "ClientType",
+      "foreignKey": ""
+    },
+    "company": {
+      "type": "belongsTo",
+      "model": "Company",
+      "foreignKey": ""
+    },
+    "campaigns": {
+      "type": "hasMany",
+      "model": "Campaign",
+      "foreignKey": "",
+      "through": "Participant"
+    }
+  },
+  "acls": [    
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }],
+  "methods": {}
+}

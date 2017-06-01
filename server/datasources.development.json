@@ -1,0 +1,33 @@
+{
+  "db": {
+    "host": "wd-agency.com",
+    "port": 5432,
+    "database": "orbiz_platform_dev",
+    "password": "SysadminWD2015",
+    "name": "db",
+    "user": "wd-agency",
+    "connector": "postgresql"
+  },
+  "EmailDataSource": {
+    "name": "EmailDataSource",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "petya.b.wiredelta@gmail.com",
+          "pass": "PetyaB2016"
+        }
+      }
+    ]
+  },
+    "container": {
+    "name": "container",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./storage"
+  }
+}

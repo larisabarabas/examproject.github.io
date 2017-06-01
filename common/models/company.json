@@ -1,0 +1,94 @@
+{
+  "name": "Company",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "CVR": {
+      "type": "number",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNo": {
+      "type": "number"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "accessId": {
+      "type": "string"
+    },
+    "agreementNo": {
+      "type": "number"
+    },
+    "preSurvey":{
+      "type":"boolean",
+      "default":false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "users": {
+      "type": "hasMany",
+      "model": "users",
+      "foreignKey": ""
+    },
+    "contactPerson": {
+      "type": "hasOne",
+      "model": "ContactPerson",
+      "foreignKey": ""
+    },
+    "products": {
+      "type": "hasMany",
+      "model": "Product",
+      "foreignKey": "",
+      "through": "CompanyProduct"
+    },
+    "campaigns": {
+      "type": "hasMany",
+      "model": "Campaign",
+      "foreignKey": ""
+    },
+    "clients": {
+      "type": "hasMany",
+      "model": "Client",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

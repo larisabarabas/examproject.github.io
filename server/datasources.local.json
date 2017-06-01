@@ -1,0 +1,33 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 5432,
+    "database": "orbiz",
+    "password": "11062506",
+    "name": "db",
+    "user": "postgres",
+    "connector": "postgresql"
+  },
+  "EmailDataSource": {
+    "name": "EmailDataSource",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "petya.b.wiredelta@gmail.com",
+          "pass": "PetyaB2016"
+        }
+      }
+    ]
+  },
+    "container": {
+    "name": "container",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/storage"
+  }
+}
